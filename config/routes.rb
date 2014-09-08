@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'categories/index'
+
   get 'ad_posts/index'
 
   devise_for :users
