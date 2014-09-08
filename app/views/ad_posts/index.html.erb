@@ -2,6 +2,6 @@
 <% @posts.each do |post| %>
 <%= post.title %><br>
 <%= post.description %><br>
-<%= image_tag post.photo_url.to_s %>
+<%= image_tag post.photo_url(:thumb).to_s %>
 <% end %>
 
