@@ -32,5 +32,5 @@
 <div class = "col-lg-3">
 <h2>Categories</h2>
 <% @categories.each do |category| %>
-<%= link_to category.name, "/categories"  %><br>
+<%= link_to category.name, "/categories/#{category.id}"  %><br>
 <% end %>

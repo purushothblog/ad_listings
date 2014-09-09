@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
 
 
-  get 'categories/index'
-
+  get 'categories/:id' => 'categories#index'
   get 'ad_posts/index'
+
+  get 'ad_posts/show'
 
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
