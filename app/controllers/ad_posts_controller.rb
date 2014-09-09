@@ -1,10 +1,10 @@
 class AdPostsController < ApplicationController
-
+  before_action :authenticate_user!
  def index
    @posts = Post.all
    @categories = Category.all
-end
+ end
  def show
     @posts = Post.all
-end
+ end
 end

@@ -45,10 +45,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">AdListings</a>
+        <a class="navbar-brand" href="/ad_posts/index">AdListings</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "About Me", "/path2"  %></li>
+            <li><%= link_to "About Me", "https://www.linkedin.com/in/pruzoth"  %></li>
             </ul>
         </div>
       </div>
@@ -58,15 +58,22 @@
       <div class="row">
         <div class="col-lg-12">
           <%= bootstrap_flash %>
-          <%= yield %>
+          <div class="navbar-text pull-right">
+          <% if user_signed_in? %>
+            Logged in as <strong>
+            <%= current_user.email %></strong>
+            <%= link_to "Edit Profile", edit_user_registration_path, :class => 'btn btn-info'  %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'btn btn-danger' %>
+            <% else %>
+            <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-info' %>
+            <%= link_to "Log In", new_user_session_path, :class => 'btn btn-success'  %>
+            <% end %>
+            </div>
+        <%= yield %>
         </div>
-        <div class="col-lg-3">
 
-     <footer>
-        <p><center>&copy; pruzoth 2014</center></p>
-      </footer>
 
-    </div> <!-- /container -->
+        </div> <!-- /container -->
 
   </body>
 </html>
